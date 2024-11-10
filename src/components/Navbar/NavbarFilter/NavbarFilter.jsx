@@ -21,7 +21,6 @@
     
     return (
       <div className='filter-header'>
-
         <div className='p1'>
           <ul>
 

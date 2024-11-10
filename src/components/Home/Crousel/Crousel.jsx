@@ -21,6 +21,10 @@ const Crousel = () => {
     setCurrent(current === 0  ? images.length- 1 : current - 1);
   }
 
+  setTimeout(() => {
+      nextSlide()
+  }, 4000);
+
 
   return (
     <div className='crousel'>

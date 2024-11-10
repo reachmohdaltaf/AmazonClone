@@ -4,6 +4,11 @@
     
 }
 
+.link{
+    color: #fff;
+    text-decoration: none;
+}
+
 .p1{
     display: flex;
     align-items: center;
@@ -31,6 +36,7 @@
     height: 100%;
     align-content: center;
     padding: 3px;
+    color: white;
 }
 
 .p1 ul li:hover{

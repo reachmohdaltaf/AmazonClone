@@ -3,10 +3,11 @@ import React from "react";
 import Navbar from "../Navbar/Navbar";
 import Product from "./Products/Product";
 import sampleData from "./Products/constants.js";
+import './Fresh.css'
 const Fresh = () => {
   const selectedProduct = sampleData;
   return (
-    <div>
+    <div className="fresh">
       <Navbar />
       <Product data={selectedProduct} />
     </div>

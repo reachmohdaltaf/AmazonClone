@@ -11,13 +11,11 @@ import "./Navbar.css";
 const Navbar = () => {
   const [isSidebarVisible, setSidebarVisible] = useState(false);
 
-  // const toggleSidebar = () => {
-  //   setSidebarVisible(!isSidebarVisible);
-  // };
+
   return (
-    <div>
+    <div className="top">
       <div className="navheader">
-        <NavbarHeader />
+        <NavbarHeader/>
         <NavbarFilter isSidebarVisible={isSidebarVisible} setSidebarVisible={setSidebarVisible} />
       </div>
 

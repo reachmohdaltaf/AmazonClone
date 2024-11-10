@@ -9,7 +9,6 @@ const Fresh = () => {
     <div>
       <Navbar />
       <Product data={selectedProduct} />
-      {console.log(selectedProduct)}
     </div>
   );
 };

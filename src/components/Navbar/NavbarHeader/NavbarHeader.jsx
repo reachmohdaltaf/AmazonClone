@@ -1,11 +1,18 @@
-// eslint-disable-next-line no-unused-vars
 import React from 'react'
 import './NavbarHeader.css'
 import cart from '../../../assets/header/cart.png'
 import logo from '../../../assets/header/logo.svg'
 import india from '../../../assets/header/india.png'
 import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 const NavbarHeader = () => {
+
+    const [cartCount, setCartCount] = useState(0);
+  
+    useEffect(() => {
+      const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+      setCartCount(cartItems.length);
+    }, []);
   return (
     <nav className='header'>
      
@@ -72,6 +79,7 @@ const NavbarHeader = () => {
         </div>
 
         <div className='cart'>
+          <h3>{cartCount}</h3>
             <img className='cart' src={cart} 
             alt="" />
             <h4>cart</h4>

@@ -21,8 +21,8 @@ const NavbarFilter = ({setSidebarVisible }) => {
     <div className="h-full bg-[#232F3E]">
       <div className="flex items-center justify-between">
         <ul className="flex gap-5 list-none text-white items-center h-[40px] w-[70%] cursor-pointer text-[12px] justify-center">
-          <li onClick={() => setSidebarVisible(true)}
-            className="border border-transparent h-full flex items-center p-1 hover:border-white">
+          <li  onClick={() => setSidebarVisible(true)}
+            className="border border-transparent h-full flex  gap-1 items-center p-1 hover:border-white">
             <i className="fa fa-bars"></i> <strong>All</strong>
           </li>
 

@@ -10,7 +10,6 @@ import Signin from './components/Signin/Signin.jsx';
 import Cart from './components/Pages/Cart.jsx';
 
 const router = createBrowserRouter(
-  
   [
     {path:"/", 
      element: <App/>
@@ -33,6 +32,7 @@ const router = createBrowserRouter(
 
 
 createRoot(document.getElementById('root')).render(
+  
   <StrictMode>
         <RouterProvider router={router}>
           

@@ -6,13 +6,13 @@ import NavbarHeader from "./NavbarHeader/NavbarHeader";
 import NavbarFilter from "./NavbarFilter/NavbarFilter";
 import Sidebar from "./Sidebar/Sidebar";
 
-const Navbar = () => {
+const Navbar = ({cart}) => {
   const [isSidebarVisible, setSidebarVisible] = useState(false);
 
   return (
     <div className="relative">
       <div className="fixed top-0 z-[5000] w-full">
-        <NavbarHeader  />
+        <NavbarHeader cart={cart} />
         <NavbarFilter
           isSidebarVisible={isSidebarVisible}
           setSidebarVisible={setSidebarVisible}/>

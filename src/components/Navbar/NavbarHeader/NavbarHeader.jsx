@@ -2,9 +2,10 @@
 import logo from '../../../assets/header/logo.svg';
 import india from '../../../assets/header/india.png';
 import { Link } from 'react-router-dom';
+import Cart from "../../Pages/Cart";
 
-const NavbarHeader = () => {
-    
+const NavbarHeader = ({cart =[]}) => {
+   const  cartCount = cart.length;
     return (
         <nav className="bg-[#131921] h-[53px] flex items-center justify-around">
             <div className="flex gap-5">
@@ -64,7 +65,7 @@ const NavbarHeader = () => {
 
              <Link to='/Cart'>
              <div className="h-[44px] flex justify-center items-center border border-transparent p-1 cursor-pointer relative hover:border-white">
-                    <h3 className="absolute top-0 left-6 text-[#E97F06]"></h3>
+                    <h3 className="absolute top-0 left-6 text-[#E97F06]">{cartCount}</h3>
                     <img src={cartimage} className='h-10' alt="Cart" />
                     <h4 className="mt-5 text-[13px]">Cart</h4>
                 </div>

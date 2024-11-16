@@ -12,11 +12,13 @@ const Signin = () => {
      
      
      
-      <div className='signin-card'>
-      <h2>Sign in</h2>
+      <div className='signin-card '>
+      <h2 className='text-2xl'>Sign in</h2>
       <div className='phonenumber'>
         <h5>Email or mobile phone number</h5>
-        <input type="text" />
+      <form action="" className='w-full'>
+      <input type="text" className='w-full' required />  
+      </form>
       </div>
       <div className='buttons'>
       <button className='continue-btn'>Continue</button>

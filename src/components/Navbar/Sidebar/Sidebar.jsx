@@ -1,6 +1,5 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
-import "./Sidebar.css";
 
 const myobj = [
   {
@@ -9,7 +8,7 @@ const myobj = [
   },
   {
     Title: "Digital Content and Device",
-    category: ["Echo & Alexa", "FIre TV", "Kindle e-Book"]
+    category: ["Echo & Alexa", "Fire TV", "Kindle e-Book"]
   },
   {
     Title: "Shop by Category",
@@ -25,32 +24,38 @@ const myobj = [
   },
 ];
 
-const Sidebar = ({isSidebarVisible, setSidebarVisible}) => {
+const Sidebar = ({ isSidebarVisible, setSidebarVisible }) => {
   return (
-   <div className="sidebar-shadow">
-     <div className="sidebar">
-      <div className="user">
-        <h3>
-          <i className="fa fa-user"> </i> Hello, Sign in
-        </h3>
-        <div className="crossbtn" onClick={()=>setSidebarVisible(false)}>X</div>
+    <div className="flex ">
+      <div className="bg-white h-full w-1/3">
+        <div className="flex items-center bg-[#232F3E] text-white h-12 px-8">
+          <h3 className="flex-1">
+            <i className="fa fa-user mr-2"></i> Hello, Sign in
+          </h3>
+          <div
+            className="absolute left-96 text-white top-1.5 text-2xl border border-gray-500 p-2 cursor-pointer bg-[rgba(255,255,255,0.14)] rounded-lg shadow-lg"
+            onClick={() => setSidebarVisible(false)}
+          >
+            X
+          </div>
+        </div>
+
+        <div className="h-[100vh] overflow-y-scroll">
+          {myobj.map((item, index) => (
+            <ul key={index} className="flex flex-col px-8 py-2 gap-6 border border-gray-200">
+              <h3 className="text-lg font-semibold">{item.Title}</h3>
+              {item.category.map((cat, i) => (
+                <li key={i} className="text-sm">
+                  {cat}
+                </li>
+              ))}
+            </ul>
+          ))}
+        </div>
       </div>
 
-      
-
-      <div className="category">
-        {myobj.map((item, index) => (
-          <ul key={index}>
-            <h3>{item.Title}</h3>
-            {item.category.map((cat, i) => (
-              <li key={i}>{cat}</li> 
-            ))}
-          </ul>
-        ))}
-      </div>
+      <div className="h-screen w-2/3 bg-[rgba(0,0,0,0.52)] backdrop-blur-[0px] border border-[rgba(0,0,0,0.3)] shadow-lg"></div>
     </div>
-    <div className="shadow">dsfs</div>
-   </div>
   );
 };
 

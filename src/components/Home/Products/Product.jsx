@@ -1,37 +1,45 @@
-// eslint-disable-next-line no-unused-vars
-import React from "react";
-import "./Products.css";
-const Product = ({ data }) => {
-  
-  const addToCart = (item) => {
-    let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
-    cartItems.push(item);
-    localStorage.setItem("cart", JSON.stringify(cartItems));
-   console.log("Item added to cart:", item);
-  };
+/* eslint-disable react/prop-types */
+const Product = ({ data, addToCart}) => {
+
+ 
+
+
 
   return (
-    <div className="container">
+    <div className="container bg-white flex flex-wrap justify-center gap-2 pt-24">
       {data.map((item, index) => (
-        <div className="product" key={index}>
-          <div className="product-image">
-            <img src={item.img_link} alt="" />
+        <div
+          className="product w-[280px] flex flex-col justify-between items-center border border-gray-200 rounded-lg shadow-lg p-5"
+          key={index}
+        >
+          {/* Product Image */}
+          <div className="product-image h-40 w-full mb-4">
+            <img
+              src={item.img_link}
+              className="h-full w-full object-contain"
+              alt={item.product_name}
+            />
           </div>
 
-          <div className="product-content">
-            <div className="product-title">
+          {/* Product Content */}
+          <div className="product-content flex flex-col gap-3 justify-between text-center">
+            <div className="product-title text-lg h-20 overflow-ellipsis overflow-hidden font-semibold text-gray-800">
               <p>{item.product_name}</p>
             </div>
-            <div className="product-rating">{item.rating}</div>
-            <div className="product-price">
-              <h3>{item.actual_price}</h3>
-              <s className="product-discount">{item.discounted_price}</s>
+            <div className="product-rating text-yellow-500 font-medium">
+              {item.rating} ★
             </div>
-            <div className="button">
-              <button onClick={() => addToCart(item)} className="addtocart">
-                Add To Cart
-              </button>
+            <div className="product-price flex items-center justify-center gap-3">
+              <h3 className="text-green-600 font-bold">{item.actual_price}</h3>
+              <s className="text-gray-500">{item.discounted_price}</s>
             </div>
+          </div>
+
+          {/* Add to Cart Button */}
+          <div className="button mt-5" onClick={()=>addToCart(item)}>
+            <button className="addtocart bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-2 px-10 rounded-lg transition">
+              Add To Cart
+            </button>
           </div>
         </div>
       ))}

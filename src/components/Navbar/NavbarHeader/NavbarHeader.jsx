@@ -1,99 +1,77 @@
-import React from 'react'
-import './NavbarHeader.css'
-import cart from '../../../assets/header/cart.png'
-import logo from '../../../assets/header/logo.svg'
-import india from '../../../assets/header/india.png'
-import { Link } from 'react-router-dom'
-import { useState, useEffect } from 'react'
+    import cartimage from "../../../assets/header/cartimage.png"
+import logo from '../../../assets/header/logo.svg';
+import india from '../../../assets/header/india.png';
+import { Link } from 'react-router-dom';
+
 const NavbarHeader = () => {
+    
+    return (
+        <nav className="bg-[#131921] h-[53px] flex items-center justify-around">
+            <div className="flex gap-5">
+                <div className="p-1 border border-transparent cursor-pointer flex items-center hover:border-white">
+                   <Link to='/'> <img src={logo} alt="Logo" className="h-[31px]" /></Link>
+                </div>
+                <div className="text-white border border-transparent p-1 cursor-pointer hover:border-white">
+                    <p className="text-[11px] ml-3 text-[#d7d2ce]">Delivering to New Delhi 11020</p>
+                    <h4 className="text-[15px]"><i className="fa fa-map-marker"></i> Update location</h4>
+                </div>
+            </div>
 
-    const [cartCount, setCartCount] = useState(0);
-  
-    useEffect(() => {
-      const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
-      setCartCount(cartItems.length);
-    }, []);
-  return (
-    <nav className='header'>
-     
-     
-     <div className="part1">
-     <div className='logo'>
-        <img src={logo} alt="" />
-      </div>
-      <div className='location'>
-        <p>Delivering to New Delhi 11020</p>
-        <h4><i className="fa fa-map-marker"></i> Update location</h4>
-      </div>
-     </div>
+            <div className="flex">
+                <div className="flex">
+                    <select className="w-[60px] h-full bg-[#E6E6E6] rounded-l-md border-none outline-none">
+                        <option value="">All</option>
+                        <option value="">All Categories</option>
+                        <option value="">Alexa Skill</option>
+                        <option value="">Amazon Devices</option>
+                        <option value="">Amazon Fashion</option>
+                        <option value="">Amazon Fresh</option>
+                        <option value="">Amazon Fresh Meat</option>
+                        <option value="">Appliances</option>
+                    </select>
+                    <input
+                        type="text"
+                        placeholder="Search Amazon.in"
+                        className="w-[450px] p-2 text-left h-full border-none outline-none"
+                    />
+                    <button className="h-full p-2 bg-[#FEBD69] rounded-r-md cursor-pointer hover:bg-[#ce9a56]">
+                        <i className="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
 
+            <div className="flex items-center text-white gap-2">
+                <div className="flex items-center justify-around cursor-pointer border border-transparent p-2 hover:border-white">
+                    <img src={india} alt="India Flag" className="h-5" />
+                    <select className="border-none outline-none bg-transparent text-white">
+                        <option value="">EN</option>
+                    </select>
+                </div>
 
-   
-   
-   
-   
-   
-   
-   
-     <div className="part2">
-     <div className='searchbar'>
-        <select name="" id="">
-            <option value="">All</option>
-            <option value="">All Categories</option>
-            <option value="">Alexa Skill</option>
-            <option value="">Amazon Devices</option>
-            <option value="">Amazon Fashion</option>
-            <option value="">Amazon Fresh</option>
-            <option value="">Amazon Fresh Meat</option>
-            <option value="">Appliances</option>
-        </select>
-        <input type="text" placeholder='Search Amazon.in' />
-        <button className='btn'><i className='fa fa-search'></i></button>
-      </div>
-     </div>
-    
-    
-    
-    
-    
-    
-    
-    <div className="part3">
-        <div className='selector'>
-        <img className='india' src={india} alt="" />
-        <select name="" id="">
-            <option value="">EN</option>
-        </select>
-        </div>
+                <div className="border border-transparent p-1 cursor-pointer hover:border-white">
+                    <Link to="/SignIn" className="text-white no-underline">
+                        <h6 className="ml-1 text-[11px]">Hello, Sign in</h6>
+                    </Link>
+                    <select className="border-none outline-none bg-transparent text-white">
+                        <option value="">Account & List</option>
+                    </select>
+                </div>
 
-        <div className='hello-sigin'>
-            <Link className='link' to="/SignIn"><h6>Hello, Sign in</h6></Link>
-            <select name="" id="">
-                <option value="">Account & List</option>
-            </select>
-        </div>
+                <div className="border text-[13px] border-transparent p-1 cursor-pointer hover:border-white">
+                    <h6>Returns</h6>
+                    <h5 className='font-bold'>& Orders</h5>
+                </div>
 
-        <div className='order'>
-        <h6>Returns</h6>
-        <h5>& Orders    </h5>
-        </div>
+             <Link to='/Cart'>
+             <div className="h-[44px] flex justify-center items-center border border-transparent p-1 cursor-pointer relative hover:border-white">
+                    <h3 className="absolute top-0 left-6 text-[#E97F06]"></h3>
+                    <img src={cartimage} className='h-10' alt="Cart" />
+                    <h4 className="mt-5 text-[13px]">Cart</h4>
+                </div>
+             </Link>  
+            </div>
+        </nav>
+    );
+};
 
-        <div className='cart'>
-          <h3>{cartCount}</h3>
-            <img className='cart' src={cart} 
-            alt="" />
-            <h4>cart</h4>
-        </div>
-   
-    </div>
-    
-    
-    
-    
-    
-    
-    </nav>
-  )
-}
-
-export default NavbarHeader
+export default NavbarHeader;

@@ -1,29 +1,36 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react'
-import './Card.css'
+import React from 'react';
 
-function Card({title, link1, link2, link3, link4, pages}) {
+// eslint-disable-next-line react/prop-types
+function Card({ title, link1, link2, link3, link4, pages }) {
     return (
-        <div className='card'>
-            <div className='title'><h3>{title}</h3></div>
-            <div className='images'>
-                <div>
-                <img src={link1} alt="" /><p>Cushion covers, bedsheets & more</p>
-                </div>
-                <div>
-                <img src={link2} alt="" /><p>Figurines, vases & more</p>
-                </div>
-                <div>
-                <img src={link3} alt="" /><p>Cushion covers, bedsheets & more</p>
-                </div>
-                <div>
-                <img src={link4} alt="" /><p>Cushion covers, bedsheets & more</p>
-                </div>
-                
+        <div className="flex flex-col gap-5 bg-white p-5 w-1/4 z-50 w-[23%] relative top-[350px]">
+            <div className="h-15">
+                <h3>{title}</h3>
             </div>
-            <div className='explore'><a href={pages}>Explore All</a></div>
+            <div className="flex flex-wrap items-center justify-center gap-3 h-4/5">
+                <div>
+                    <img src={link1} alt="" className="h-[70px]" />
+                    <p className="text-xs w-[100px]">Cushion covers, bedsheets & more</p>
+                </div>
+                <div>
+                    <img src={link2} alt="" className="h-[70px]" />
+                    <p className="text-xs w-[100px]">Figurines, vases & more</p>
+                </div>
+                <div>
+                    <img src={link3} alt="" className="h-[70px]" />
+                    <p className="text-xs w-[100px]">Cushion covers, bedsheets & more</p>
+                </div>
+                <div>
+                    <img src={link4} alt="" className="h-[70px]" />
+                    <p className="text-xs w-[100px]">Cushion covers, bedsheets & more</p>
+                </div>
+            </div>
+            <div className="w-11/12">
+                <a href={pages} className="text-[#007185] no-underline">Explore All</a>
+            </div>
         </div>
-    )
+    );
 }
 
-export default Card
+export default Card;

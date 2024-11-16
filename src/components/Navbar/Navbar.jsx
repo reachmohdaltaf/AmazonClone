@@ -5,25 +5,22 @@ import React from "react";
 import NavbarHeader from "./NavbarHeader/NavbarHeader";
 import NavbarFilter from "./NavbarFilter/NavbarFilter";
 import Sidebar from "./Sidebar/Sidebar";
-import "./Navbar.css";
-
 
 const Navbar = () => {
   const [isSidebarVisible, setSidebarVisible] = useState(false);
 
-
   return (
-    <div className="top">
-      <div className="navheader">
-        <NavbarHeader/>
-        <NavbarFilter isSidebarVisible={isSidebarVisible} setSidebarVisible={setSidebarVisible} />
+    <div className="relative">
+      <div className="fixed top-0 z-[5000] w-full">
+        <NavbarHeader  />
+        <NavbarFilter
+          isSidebarVisible={isSidebarVisible}
+          setSidebarVisible={setSidebarVisible}/>
       </div>
 
-      <div className="sidebar-position">
-       { isSidebarVisible ?<Sidebar  isSidebarVisible={isSidebarVisible} setSidebarVisible={setSidebarVisible}/>
-        : null}
+      <div className={`absolute top-0 z-[6000] w-full ${isSidebarVisible ? "block" : "hidden"}`}>
+        <Sidebar isSidebarVisible={isSidebarVisible} setSidebarVisible={setSidebarVisible} />
       </div>
-    
     </div>
   );
 };

@@ -35,7 +35,7 @@ const Cart = ({ cart, setCart, handleRemove }) => {
                     <p className="text-sm text-gray-400 line-through">{item.discounted_price}</p>
                   </div>
                  </div>
-                 <button className=" bg-red-500 animate-bounce   text-white p-4 flex items-center border-[1px] shadow-lg hover:bg-white hover:text-black hover:border-black" onClick={()=>handleRemove(index)}>Remove</button>
+                 <button className=" bg-red-500   text-white p-3 rounded-lg flex items-center border-[1px] shadow-lg hover:bg-red-600 " onClick={()=>handleRemove(index)}>Remove</button>
               </div>
             ))
           ) : (

@@ -1,11 +1,23 @@
     import cartimage from "../../../assets/header/cartimage.png"
 import logo from '../../../assets/header/logo.svg';
 import india from '../../../assets/header/india.png';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import Cart from "../../Pages/Cart";
+import { useState } from "react";
 
 const NavbarHeader = ({cart =[]}) => {
+   const navigate = useNavigate()
+    const  [input, setInput] = useState("")
+
    const  cartCount = cart.length;
+   const handleInputChange = ()=>{
+    
+   }
+
+   const handleSubmit=(e)=>{
+    e.preventDefault()
+    navigate("/fresh")
+   }
     return (
         <nav className="bg-[#131921] h-[53px] flex items-center justify-around">
             <div className="flex gap-5">
@@ -20,6 +32,7 @@ const NavbarHeader = ({cart =[]}) => {
 
             <div className="flex">
                 <div className="flex">
+                <form onSubmit={handleSubmit}>
                     <select className="w-[60px] h-full bg-[#E6E6E6] rounded-l-md border-none outline-none">
                         <option value="">All</option>
                         <option value="">All Categories</option>
@@ -31,6 +44,7 @@ const NavbarHeader = ({cart =[]}) => {
                         <option value="">Appliances</option>
                     </select>
                     <input
+                       onChange={handleInputChange}
                         type="text"
                         placeholder="Search Amazon.in"
                         className="w-[450px] p-2 text-left h-full border-none outline-none"
@@ -38,6 +52,7 @@ const NavbarHeader = ({cart =[]}) => {
                     <button className="h-full p-2 bg-[#FEBD69] rounded-r-md cursor-pointer hover:bg-[#ce9a56]">
                         <i className="fa fa-search"></i>
                     </button>
+                    </form>
                 </div>
             </div>
 

@@ -4,7 +4,6 @@ import Navbar from "../Navbar/Navbar";
 const Cart = () => {
   const [cart, setCart] = useState([]);
 
-  // Load cart data from local storage on mount
   useEffect(() => {
     const storedCart = localStorage.getItem("cart");
     if (storedCart) {

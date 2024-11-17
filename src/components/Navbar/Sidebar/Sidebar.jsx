@@ -33,7 +33,7 @@ const Sidebar = ({ isSidebarVisible, setSidebarVisible }) => {
             <i className="fa fa-user mr-2"></i> Hello, Sign in
           </h3>
           <div
-            className="absolute right-[900px] text-white   z-10 bg-black  top-1.5 text-2xl border border-gray-500 p-2 cursor-pointer bg-[rgba(255,255,255,0.14)] rounded-lg shadow-lg"
+            className="absolute left-96 text-white   z-10 bg-black  top-1.5 text-2xl border border-gray-500 p-2 cursor-pointer bg-[rgba(255,255,255,0.14)] rounded-lg shadow-lg"
             onClick={() => setSidebarVisible(false)}
           >
             X

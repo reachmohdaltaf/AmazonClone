@@ -5,7 +5,7 @@ import { Link, Navigate, useNavigate } from 'react-router-dom';
 import Cart from "../../Pages/Cart";
 import { useState } from "react";
 
-const NavbarHeader = ({cart =[]}) => {
+const NavbarHeader = ({cart}) => {
    const navigate = useNavigate()
     const  [input, setInput] = useState("")
 
@@ -13,6 +13,7 @@ const NavbarHeader = ({cart =[]}) => {
    const handleInputChange = ()=>{
     
    }
+   console.log(cart.length)
 
    const handleSubmit=(e)=>{
     e.preventDefault()

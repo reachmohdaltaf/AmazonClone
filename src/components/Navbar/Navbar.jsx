@@ -7,6 +7,7 @@ import NavbarFilter from "./NavbarFilter/NavbarFilter";
 import Sidebar from "./Sidebar/Sidebar";
 
 const Navbar = ({cart}) => {
+  console.log(cart)
   const [isSidebarVisible, setSidebarVisible] = useState(false);
 
   return (

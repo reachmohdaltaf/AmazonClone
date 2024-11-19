@@ -27,7 +27,7 @@ const Crousel = () => {
   }, [current]);
 
   return (
-    <div className="absolute flex justify-center mt-[50px] w-full h-screen overflow-hidden">
+    <div className="absolute flex justify-center mt-20 w-full h-screen overflow-hidden">
       <div 
         className="absolute left-0 cursor-pointer transition-all duration-300 ease-in-out hover:bg-gray-100" 
         onClick={nextSlide}

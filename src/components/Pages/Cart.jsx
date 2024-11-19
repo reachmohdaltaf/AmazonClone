@@ -25,7 +25,7 @@ const Cart = ({ cart, setCart, handleRemove }) => {
   return (
     <div className="bg-gray-100 min-h-screen">
       <Navbar cart={cart} />
-      <div className="h-[200vh] pt-24 flex flex-col items-center justify-start px-4">
+      <div className="h-[200vh] pt-24 flex mt-10 flex-col items-center justify-start px-4">
         <div className="cart-text font-bold text-5xl text-gray-800 mb-8">
           My Cart
         </div>

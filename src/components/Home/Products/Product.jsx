@@ -2,7 +2,7 @@
   const Product = ({ data, addToCart}) => {
 
     return (
-      <div className="container  items-center bg-white w-[100%] flex flex-wrap justify-center gap-2 pt-24">
+      <div className="container  items-center  bg-white flex flex-wrap justify-center gap-2 pt-24">
         {data.map((item, index) => (
           <div
             className="product w-[280px] flex bg-white flex-col justify-between items-center border border-gray-200 rounded-lg shadow-lg p-5"
